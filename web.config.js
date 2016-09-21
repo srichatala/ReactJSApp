@@ -5,8 +5,8 @@ module.exports={
 	devtools:'inline-source-map',
 	entry:[
 		'webpack-dev-server/client?http://127.0.0.1:8080',
-		'webpack/hot/only-dev-server',
-		'./src'
+		'webpack/hot/dev-server',
+		'./app'
 	],
 	output:{
 		path:path.join(_dirname,'public'),
@@ -17,11 +17,13 @@ module.exports={
 		extensions:['','.js']
 	},
 	module:{
-		loaders:{
+		loaders:[
+		{
 			test:/\.jsx?$/,
 			exclude:/node_modules/,
-			loader:['react-hot','babel?presets[]=react,preset[]=es2015']
+			loaders:['react-hot','babel?presets[]=react,presets[]=es2015']
 		}
+		]
 	},
 	plugins:{
 		new webpack.HotModuleReplacementPlugin(),
