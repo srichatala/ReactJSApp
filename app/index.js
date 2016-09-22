@@ -1,3 +1,3 @@
-let message = 'Message from entry!!!';
+let message = 'Message from entry!!';
 
 console.log(message);
