@@ -17,6 +17,6 @@ Run the application with webpack live server
 
 1. C:\ReactJSApp>webpack-dev-server ./app bundle.js
 2. To see in browser: http://localhost:8080
-3. To live server updates in browser: http://localhost:8080/Webpack-dev-server
+3. To live server updates in browser: http://localhost:8080/webpack-dev-server/
 
 
