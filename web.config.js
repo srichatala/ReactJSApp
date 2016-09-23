@@ -1,7 +1,27 @@
-var webpack = require('webpack');
 var path = require('path');
 
-module.exports={
+var DIST_DIR = path.resolve(__dirname,"dist");
+var SRC_DIR = path.resolve(__dirname,"src");
+
+module.exports = {
+	entry:SRC_DIR + "/app/index.js",
+	output:{
+		path:DIST_DIR + "/app",
+		filename:"bundle.js",
+		publicPath:"/app/"
+	},
+	module:{
+		loaders:[{
+			tests:/\.js?$/,
+			include:SRC_DIR,
+			loader:"babel-loader",
+			query:{
+				presets:["react","es2015","stage-2"]
+			}
+		}]
+	}
+};
+/*module.exports={
 	devtools:'inline-source-map',
 	entry:[
 		'webpack-dev-server/client?http://127.0.0.1:8080',
@@ -29,4 +49,4 @@ module.exports={
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin()
 	}
-};
+};*/
