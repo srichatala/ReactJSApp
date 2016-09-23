@@ -15,8 +15,9 @@ To get the application to on your local, follow the steps:
 ## Run
 Run the application with webpack live server
 
-1. C:\ReactJSApp>webpack-dev-server ./app bundle.js
-2. To see in browser: http://localhost:8080
-3. To live server updates in browser: http://localhost:8080/webpack-dev-server/
+1. C:\ReactJSApp>webpack ./app bundle.js
+2. C:\ReactJSApp>webpack-dev-server ./app bundle.js
+3. To see in browser: http://localhost:8080
+4. To live server updates in browser: http://localhost:8080/webpack-dev-server/
 
 
