@@ -4,22 +4,23 @@ var DIST_DIR = path.resolve(__dirname,"dist");
 var SRC_DIR = path.resolve(__dirname,"src");
 
 module.exports = {
-	entry:SRC_DIR + "/app/index.js",
-	output:{
-		path:DIST_DIR + "/app",
-		filename:"bundle.js",
-		publicPath:"/app/"
-	},
+	entry:SRC_DIR + "/js/index.js",
 	module:{
 		loaders:[{
 			tests:/\.js?$/,
 			include:SRC_DIR,
+			exclude:/(node_modules|bower_components)/,
 			loader:"babel-loader",
 			query:{
-				presets:["react","es2015","stage-2"]
+				presets:["react","es2015","stage-0"],
+				plugins:['react-html-attrs','transform-class-properties','transform-decorators-legacy']
 			}
 		}]
-	}
+	},
+	output:{
+		path:DIST_DIR,
+		filename:"bundle.js"		
+	},
 };
 /*module.exports={
 	devtools:'inline-source-map',
