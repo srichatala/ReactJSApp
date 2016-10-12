@@ -1,3 +1,7 @@
-var jquery = require('jquery');
+var React = require('react');
 
-jquery('h1').html('Welcome To webpack with jquery');
+var Hello = React.createClass({displayName: 'Hello',
+  render: function() {
+    return React.createElement("h1", null, "Hello ");
+  }
+});
