@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install",
-    "start": "npm run build",
-    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
-    "build:prod": "webpack -d && cp src/inde.html dist/index.html"
+    "watch": "webpack -d --watch",
+    "build": "webpack",
+    "start": "webpack-dev-server --progress --inline --hot --history-api-fallback"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,8 @@
   "homepage": "https://github.com/srichatala/ReactJSApp#readme",
   "dependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
